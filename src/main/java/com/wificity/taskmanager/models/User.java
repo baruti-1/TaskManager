@@ -1,6 +1,12 @@
 package com.wificity.taskmanager.models;
 
+import jakarta.persistence.*;
+
+@Entity
+//@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
@@ -11,6 +17,10 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
+
     }
 
     public void setId(int id) {
